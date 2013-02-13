@@ -1,0 +1,28 @@
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies{
+    compile 'com.github.benjaminAbbitt:InjectLogger:1.0.0-SNAPSHOT'
+	compile 'org.springframework:spring-beans:3.2.1.RELEASE'
+    compile 'org.springframework:spring-context:3.2.1.RELEASE'
+    compile 'org.slf4j:slf4j-api:1.7.2'
+}
+
+project.group = 'com.github.benjaminAbbitt'
+project.version = '1.0.0-SNAPSHOT'
+
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.artifactId = 'SLF4JInjector'
+        }
+    }
+}
